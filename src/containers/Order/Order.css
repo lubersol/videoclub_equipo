@@ -1,0 +1,62 @@
+.orderProfile {
+    display: flex;
+    flex-direction: column;
+    color: #84a9ac;
+    height: 100vh;
+    width: 100vw;
+}
+
+.titularGracias {
+    color: #85cfec;
+    font-size: 5em;
+}
+
+.infoOrder {
+    padding: 2vh;
+    border-radius: 1em;
+    margin: 2em;
+    background-color: black;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.inside {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-self: center;
+    width: 80%;
+    margin-left: 5%;
+    margin-right: 5%;
+}
+
+.textoP {
+    color: #85cfec;
+    font-size: 3em;
+}
+
+.justifybutton {
+    display: flex;
+    justify-content: center;
+}
+
+.botonInicio {
+    display: flex;
+    justify-content: center;
+    font-size: 1.5em;
+    color: #85cfec;
+    background-color: rgb(58, 56, 56);
+    width: 7em;
+    text-align: center;
+    cursor: pointer;
+    border-radius: 0.6em;
+    padding: 0.4em;
+}
+
+.botonInicio:hover {
+    background-color: #a5c4c7;
+    color: black;
+}

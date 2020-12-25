@@ -1,0 +1,116 @@
+body {
+    background-color: black;
+}
+
+.containerGlobal {
+    display: flex;
+    flex-direction: row;
+    background-color: black;
+}
+
+.goBack {
+    margin-top: 5em;
+    margin-left: 2em;
+}
+
+.caratula {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    max-width: 100%;
+    height: auto;
+    background-color: black;
+    width: 100%;
+}
+
+.imagen {
+    padding: 2em;
+    cursor: pointer;
+    background-color: black;
+}
+
+.cardMovie {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: black;
+}
+
+.articles {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.titulo {
+    display: flex;
+    justify-content: center;
+    padding: 1em;
+    width:80%;
+    text-align: center;
+    font-size: 2em;
+    line-height: 1.3;
+    color: #85cfec;
+    font-weight: bold;
+    padding: 1em;
+    background-color: black;
+}
+
+.dia {
+    display: flex;
+    justify-content: center;
+    color: #85cfec;
+    padding: 1em;
+    background-color: black;
+    width:80%;
+}
+
+.descripcion {
+    display: flex;
+    color: white;
+    text-align: justify;
+    width: 80%;
+    background-color: black;
+    font-size: 1.5em;
+    padding-bottom: 2em;
+}
+
+.precio{
+    display: flex;
+    justify-content: center;
+    color: #85cfec;
+    padding: 1em;
+    background-color: black;
+    width:80%;
+}
+
+.containerAlquilar {
+    display:flex;
+    justify-content: center;
+    width:80%;
+    align-items: center;
+    background-color: black;
+}
+
+.alquilar {
+    background-color: rgb(231, 40, 72);
+    border: 1px solid rgb(199, 23, 52);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    border-radius: 0.6em;
+    text-decoration: none;
+    color: white;
+    font-size: 1.5em;
+    height: 2.5em;
+    width: 5em;
+}
+
+.alquilar:hover {
+    background-color: rgb(189, 45, 69);
+    border: 1px solid;
+    color: white;
+}

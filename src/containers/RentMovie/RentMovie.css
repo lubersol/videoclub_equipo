@@ -1,0 +1,59 @@
+* {
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Open Sans', sans-serif;
+}
+
+body {
+    background-color: black;
+}
+
+.gridCartel {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 0.5em;
+    background-color: black;
+    cursor: pointer;
+}
+
+.cajaBotones {
+    display: flex;
+    justify-content: space-between;
+    margin: 1.3em;
+}
+
+.boton {
+    background-color: rgb(184, 225, 226);
+    color: black;
+    background: -webkit-linear-gradient(rgb(212, 204, 212), rgb(76, 68, 78));
+    width: 8em;
+    height: 2em;
+    font-size: 1em;
+    font-weight: bold;
+    border: 3px solid rgb(85, 82, 85);
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+}
+
+.boton:hover {
+    background-color: rgb(226, 199, 220);
+    color: white;
+}
+
+a {
+    font-family: BlinkMacSystemFont, -apple-system, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+}
+
+header {
+    background-color: black;
+    display: flex;
+    justify-content: center;
+}
+
+.titular {
+    color: #85cfec;
+    font-size: 2em;
+    text-align: center;
+    margin-top: 0.5em;
+}
