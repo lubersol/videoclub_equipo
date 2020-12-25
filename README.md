@@ -28,7 +28,7 @@ La aplicación contiene las siguientes vistas:
 
 ### Enlace de la API a Heroku :zap:
 
-:arrow_right: https://videoclub-react.herokuapp.com
+:arrow_right: https://videoclub-equipo.herokuapp.com/
 
 
 
