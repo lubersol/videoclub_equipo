@@ -1,10 +1,11 @@
 import React, { Component, Fragment } from 'react';
+import { notification } from 'antd';
+import axios from 'axios';
 
 
 class MovieList extends Component {
     constructor(props) {
         super(props);
-
         this.state = {
             movie: {}
         }
@@ -17,14 +18,27 @@ class MovieList extends Component {
 
     }
 
+    async goRent() {
+        //meter función if en caso de que no esté logueado!!
+        const token = JSON.parse(localStorage.getItem('token'))
+        const data = JSON.parse(localStorage.getItem('datosPelicula'))
+        const URL = 'https://heroku-mongo-mi-atlas.herokuapp.com/api/order';
+        const order = {
+            "userId": token.id,
+            "movieId": data.id
+        }
+        if (!token) this.goBack()
+        await axios.post(URL, order)
+        console.log(order);
+        notification.success({
+            message: "Pelicula añadida!"
+        })
+        console.log(token);
+    }
+
     goBack() {
         this.props.history.push('/rentmovie');
     }
-
-    goRent() {
-        this.props.history.push('/order')
-    }
-
 
     getMovie() {
         if (this.state.movie?.id) {

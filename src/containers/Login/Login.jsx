@@ -19,11 +19,12 @@ const Login = (props) => {
             event.preventDefault();
             let login = await axios.post('https://heroku-mongo-mi-atlas.herokuapp.com/api/user/login', { email, password });
             let token = await login.data.token;
+            console.log(token);
             localStorage.setItem('token', token);
             localStorage.setItem('email', email);
             props.setUser(email);
             notification.success({ message: 'Login correcto!', description: 'Bienvenido a mi videoclub ' })
-            history.push('/')
+            history.push('/rentmovie')
         } catch (error) {
             console.error(error)
             notification.error({ message: 'Error', description: 'Ha habido un problema en el login' })

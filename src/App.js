@@ -33,7 +33,7 @@ function App() {
   return (
     <BrowserRouter>
       <Switch>
-         <Route path='/logout' component={Logout} exact /> 
+        <Route path='/logout' component={Logout} exact />
         <Route path='/order' component={Order} exact />
         <Route path='/' component={Home} exact />
         <Route path='/movielist' component={MovieList} exact />
@@ -41,9 +41,9 @@ function App() {
         <Route path='/moviedetail' component={MovieDetails} exact />
         <Route path='/register' component={Register} exact />
         <Route path='/login' component={Login} exact>
-          <Login setUser={setUser} />
+        <Login setUser={setUser} />
         </Route>
-        <Redirect to="/" exact />
+        <Redirect to="/rentmovie" exact /> 
       </Switch>
     </BrowserRouter>
   );
