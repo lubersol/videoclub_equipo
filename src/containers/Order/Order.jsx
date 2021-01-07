@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import './Order.css';
 import { notification } from 'antd';
+import moment from 'moment';
 //import { Link } from 'react-router-dom';
 
 
@@ -19,18 +20,20 @@ export default class Order extends Component {
         console.log(data)
     }
     async rent() {
-        const token = JSON.parse(localStorage.getItem('token'))
+        const token = localStorage.getItem('access_token')
         const data = JSON.parse(localStorage.getItem('datosPelicula'))
-        const URL = 'https://heroku-mongo-mi-atlas.herokuapp.com/api/order';
+        const URL = 'https://127.0.0.1:8000/api/rent';
         const order = {
             "userId": token.id,
-            "movieId": data.id
+            "movieId": data.id,
+            "createdAt": moment().format(),
+            "returnDate": moment().add(3, 'days').calendar()
         }
         if (!token) this.goBack()
         await axios.post(URL, order)
         console.log(order)
         notification['success']({
-            message: "Pelicula añadida!"
+            message: "Pelicula añadida!"+ "debes devolverla el "+moment().add(3, 'days').calendar()
         })
         console.log(token);
     }

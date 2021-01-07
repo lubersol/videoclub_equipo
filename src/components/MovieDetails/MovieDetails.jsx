@@ -1,4 +1,5 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
+import { notification } from 'antd';
 import './MovieDetails.css';
 
 class Moviedetails extends Component {
@@ -20,6 +21,10 @@ class Moviedetails extends Component {
 
     goRent() {
         this.props.history.push('/order')
+    }
+
+    goLogin() {
+        this.props.history.push('/login')
     }
 
     pickMovie() {

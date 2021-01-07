@@ -17,10 +17,15 @@ const Login = (props) => {
 
         try {
             event.preventDefault();
-            let login = await axios.post('https://heroku-mongo-mi-atlas.herokuapp.com/api/user/login', { email, password });
+            const params= new URLSearchParams()
+            params.append('email',email)
+            params.append('password',password)
+
+            let login = await axios.post('https://127.0.0.1:8000/api/login', params);
+            console.log(login);
             let token = await login.data.token;
             console.log(token);
-            localStorage.setItem('token', token);
+            localStorage.setItem('access_token', token);
             localStorage.setItem('email', email);
             props.setUser(email);
             notification.success({ message: 'Login correcto!', description: 'Bienvenido a mi videoclub ' })

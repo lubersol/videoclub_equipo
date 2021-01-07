@@ -11,16 +11,26 @@ const Register = () => {
     const history = useHistory();
 
     const handleSubmit = async event => {
-        console.log("registrado");
         try {
             event.preventDefault();
-            const body = {
-                name: event.target.name.value,
-                email: event.target.email.value,
-                password: event.target.password.value
-            };
+
+             const body = {
+                "email": event.target.email.value,
+                "name": event.target.name.value,
+                "password": event.target.password.value
+             };
             console.log(body);
-            await axios.post('https://heroku-mongo-mi-atlas.herokuapp.com/api/user', body)
+            await axios({
+                method:'post',
+                url: 'https://127.0.0.1:8000/api/user',
+                headers:{},
+                data:{
+                "email": event.target.email.value,
+                "name": event.target.name.value,
+                "password": event.target.password.value
+                }
+            })
+            // await axios.post('https://127.0.0.1:8000/api/user', body)
             notification.success({ message: 'Registrado!', description: 'Bienvenido! Te has registrado correctamente' })
             history.push('/login')
         } catch (error) {
