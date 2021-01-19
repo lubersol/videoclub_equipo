@@ -2,7 +2,7 @@ import React from 'react';
 import { useHistory } from "react-router";
 import './Register.css';
 import { Link } from 'react-router-dom';
-import { notification } from 'antd';
+import { message, notification } from 'antd';
 import axios from 'axios';
 
 
@@ -20,21 +20,25 @@ const Register = () => {
                 "password": event.target.password.value
              };
             console.log(body);
-            await axios({
-                method:'post',
-                url: 'https://127.0.0.1:8000/api/user',
-                headers:{},
-                data:{
-                "email": event.target.email.value,
-                "name": event.target.name.value,
-                "password": event.target.password.value
-                }
-            })
-            // await axios.post('https://127.0.0.1:8000/api/user', body)
+            // await axios({
+            //     method:'post',
+            //     url: 'https://127.0.0.1:8000/api/user',
+            //     headers:{},
+            //     data:{
+            //     "email": event.target.email.value,
+            //     "name": event.target.name.value,
+            //     "password": event.target.password.value
+            //     }
+            // })
+            //let res = await axios.post(getUrl(`/registerU`), body);
+            let resultado = await axios.post('http://localhost:8000/api/user/register', body)
+            console.log(resultado);
             notification.success({ message: 'Registrado!', description: 'Bienvenido! Te has registrado correctamente' })
             history.push('/login')
         } catch (error) {
-            console.log(error)
+            console.log(error);
+            notification.success({ message: 'Error!', description: 'No te has registrado correctamente' })
+
         }
     }
 

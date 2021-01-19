@@ -21,7 +21,7 @@ const Login = (props) => {
             params.append('email',email)
             params.append('password',password)
 
-            let login = await axios.post('https://127.0.0.1:8000/api/login', params);
+            let login = await axios.post('http://localhost:8000/api/user/login', params);
             console.log(login);
             let token = await login.data.token;
             console.log(token);
